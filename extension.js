@@ -21,7 +21,12 @@
         {
             xml: `
                 <block type="ibit_motor2">
-                    <value name="speed">
+                    <value name="speed1">
+                        <shadow type="math_number">
+                            <field name="NUM">50</field>
+                        </shadow>
+                    </value>
+                    <value name="speed2">
                         <shadow type="math_number">
                             <field name="NUM">50</field>
                         </shadow>
