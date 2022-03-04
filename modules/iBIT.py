@@ -2,13 +2,14 @@ from machine import Pin, PWM, I2C
 
 class Motor:
     def __init__(self, dir, pwm):
-        self.DIR = Pin(pin1)
-        self.PWM = PWM(Pin(pin2), freq=1000)
+        self.DIR = Pin(dir)
+        self.PWM = PWM(Pin(pwm), freq=1000)
 
-    def set(speed):
+    def set(self, speed):
         self.DIR.value(1 if speed > 0 else 0)
         if speed < 0:
             speed = -speed
+        speed = min(speed, 100)
         self.PWM.duty(int(speed / 100.0 * 1023.0))
 
 M1 = Motor(18, 19)
@@ -18,12 +19,16 @@ class Servo:
     def __init__(self, pin):
         self.pin = PWM(Pin(pin), freq=50)
     
-    def angle(value):
+    def angle(self, value):
         self.pin.duty(int(25.57 + ((value / 180.0) * 102.3)))
 
-SV1 = Servo()
-SV2 = Servo()
+    def stop(self):
+        self.pin.duty(0)
 
+SV1 = Servo(4)
+SV2 = Servo(15)
+
+"""
 ADS7828_ADDR = 0x48
 
 def ADC(ch):
@@ -31,3 +36,4 @@ def ADC(ch):
     i2c.writeto(ADS7828_ADDR, bytes([ ((0, 4, 1, 5, 2, 6, 3, 7)[ch] << 4) | 0x8C ])) # PD=0b11, SD=0b1
     h, l = i2c.readfrom(ADS7828_ADDR, 2)
     return (h << 8) | l
+"""
