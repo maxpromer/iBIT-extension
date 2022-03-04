@@ -26,7 +26,7 @@ Blockly.Python['ibit_turn'] = function (block) {
     var dropdown_dir = block.getFieldValue('dir');
     var value_speed = Blockly.Python.valueToCode(block, 'speed', Blockly.Python.ORDER_ATOMIC);
 
-    var code = `iBIT.M1.set(${dropdown_dir === "RIGHT" ? value_speed : 0}); iBIT.M2.set(${dropdown_dir === "LEFT" ? value_speed : 0}\n`;
+    var code = `iBIT.M1.set(${dropdown_dir === "RIGHT" ? value_speed : 0}); iBIT.M2.set(${dropdown_dir === "LEFT" ? value_speed : 0})\n`;
     return code;
 };
 
@@ -36,7 +36,7 @@ Blockly.Python['ibit_spin'] = function (block) {
     var dropdown_dir = block.getFieldValue('dir');
     var value_speed = Blockly.Python.valueToCode(block, 'speed', Blockly.Python.ORDER_ATOMIC);
 
-    var code = `iBIT.M1.set(${(dropdown_dir === "RIGHT" ? "" : "-") + value_speed}); iBIT.M2.set(${(dropdown_dir === "LEFT" ? "" : "-") + value_speed}\n`;
+    var code = `iBIT.M1.set(${(dropdown_dir === "RIGHT" ? "" : "-") + value_speed}); iBIT.M2.set(${(dropdown_dir === "LEFT" ? "" : "-") + value_speed})\n`;
     return code;
 };
 
