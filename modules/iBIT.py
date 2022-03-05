@@ -6,7 +6,7 @@ class Motor:
         self.PWM = PWM(Pin(pwm, Pin.OUT), freq=1000, duty=0)
         self.PWM.deinit()
         self.PWM.init()
-        self.pin.freq(1000)
+        self.PWM.freq(1000)
         self.PWM.duty(0)
         self.forward_logic = forward_logic
 
