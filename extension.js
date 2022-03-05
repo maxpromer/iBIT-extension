@@ -3,7 +3,7 @@
     description: "iBIT package for microBlock, Robot board control by Mbits, OpenBit",
     author: "INEX",
     category: "Device Control",
-    version: "1.0.0",
+    version: "1.0.1",
     icon: "/static/icon.png", // Category icon
     color: "#3498DB", // Category color (recommend some blocks color)
     blocks: [ // Blocks in Category
