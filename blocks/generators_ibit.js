@@ -65,3 +65,12 @@ Blockly.Python['ibit_servo_stop'] = function (block) {
     var code = `iBIT.${dropdown_ch}.stop()\n`;
     return code;
 };
+
+Blockly.Python['ibit_analog_read'] = function (block) {
+    Blockly.Python.definitions_['import_iBIT'] = 'import iBIT';
+
+    var dropdown_pin = block.getFieldValue('pin');
+
+    var code = `iBIT.ADC(${dropdown_pin})`;
+    return [code, Blockly.Python.ORDER_NONE];
+};
