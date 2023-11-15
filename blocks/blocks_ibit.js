@@ -190,5 +190,30 @@ Blockly.defineBlocksWithJsonArray(
     "colour": "#3498DB",
     "tooltip": "",
     "helpUrl": ""
+},
+{
+    "type": "ibit_analog_read",
+    "message0": "Analog read pin %1",
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "pin",
+        "options": [
+          [ "ADC0", "0" ],
+          [ "ADC1", "1" ],
+          [ "ADC2", "2" ],
+          [ "ADC3", "3" ],
+          [ "ADC4", "4" ],
+          [ "ADC5", "5" ],
+          [ "ADC6", "6" ],
+          [ "ADC7", "7" ],
+        ]
+      }
+    ],
+    "inputsInline": true,
+    "output": "Number",
+    "colour": "#3498DB",
+    "tooltip": "",
+    "helpUrl": ""
 }]
 );

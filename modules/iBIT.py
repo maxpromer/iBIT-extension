@@ -36,12 +36,10 @@ class Servo:
 SV1 = Servo(4)
 SV2 = Servo(15)
 
-"""
-ADS7828_ADDR = 0x48
+ADS7828_ADDR = 0x4A
 
 def ADC(ch):
-    i2c = I2C(0, scl=Pin(22), sda=Pin(21), freq=100000)
+    i2c = I2C(0, scl=Pin(21), sda=Pin(22), freq=100000)
     i2c.writeto(ADS7828_ADDR, bytes([ ((0, 4, 1, 5, 2, 6, 3, 7)[ch] << 4) | 0x8C ])) # PD=0b11, SD=0b1
     h, l = i2c.readfrom(ADS7828_ADDR, 2)
-    return (h << 8) | l
-"""
+    return ((h << 8) | l) & 0x0FFF
